@@ -279,8 +279,8 @@ material = ExtResource( 53 )
 position = Vector2( 0, -4 )
 z_index = 5
 frames = ExtResource( 1 )
-animation = "idle"
-frame = 19
+animation = "shot_strong2"
+frame = 11
 playing = true
 
 [node name="head_armor" type="AnimatedSprite" parent="animatedSprite"]
@@ -516,7 +516,7 @@ visible = false
 position = Vector2( 18, -3 )
 
 [node name="AltFire Position" type="Node2D" parent="."]
-position = Vector2( 13, -16 )
+position = Vector2( 14, -11 )
 
 [node name="WeaponChanger" type="Node2D" parent="."]
 script = ExtResource( 8 )
@@ -732,7 +732,7 @@ weapon = ExtResource( 101 )
 
 [node name="break_vfx" type="AnimatedSprite" parent="Shot/XDrive"]
 modulate = Color( 0.258824, 0.705882, 1, 0.654902 )
-position = Vector2( -1, 3 )
+position = Vector2( 0, 5 )
 z_index = 25
 frames = ExtResource( 95 )
 frame = 9

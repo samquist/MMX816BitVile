@@ -28,6 +28,10 @@ func connect_charged_shot_event(_shot):
 	if _shot.has_method("initialize"):
 		_shot.call_deferred("initialize", arm_cannon.character.get_facing_direction())
 
+func position_shot(shot) -> void:
+	shot.global_position = character.global_position
+	shot.projectile_setup(character.get_facing_direction(), character.altfire_position.position)
+
 func fire(charge_level := 0) -> void:
 	if is_attacking:
 		return
