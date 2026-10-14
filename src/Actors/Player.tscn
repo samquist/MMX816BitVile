@@ -279,8 +279,8 @@ material = ExtResource( 53 )
 position = Vector2( 0, -4 )
 z_index = 5
 frames = ExtResource( 1 )
-animation = "shot_strong2"
-frame = 11
+animation = "shot_strong"
+frame = 8
 playing = true
 
 [node name="head_armor" type="AnimatedSprite" parent="animatedSprite"]
@@ -516,7 +516,7 @@ visible = false
 position = Vector2( 18, -3 )
 
 [node name="AltFire Position" type="Node2D" parent="."]
-position = Vector2( 14, -11 )
+position = Vector2( 16, -11 )
 
 [node name="WeaponChanger" type="Node2D" parent="."]
 script = ExtResource( 8 )

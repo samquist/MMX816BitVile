@@ -40,9 +40,6 @@ func fire(charge_level := 0) -> void:
 	
 	var character = get_parent().get_parent()
 	
-	# Emit the weapon_stasis event to trigger WeaponStasis
-	Event.emit_signal("weapon_stasis")
-	
 	# Lock player movement and freeze in midair
 	character.stop_listening_to_inputs()
 	character.set_horizontal_speed(0)
@@ -54,7 +51,7 @@ func fire(charge_level := 0) -> void:
 		character.play_animation_once("shot_strong")
 	else:
 		# Air animation
-		character.play_animation_once("shot_right")
+		character.play_animation_once("shot_strong_air")
 	
 	# Spawn the projectile
 	.fire(charge_level)
@@ -65,12 +62,13 @@ func fire(charge_level := 0) -> void:
 func _unlock_player():
 	is_attacking = false
 	
-	# Emit end_weapon_stasis event to stop WeaponStasis
-	Event.emit_signal("end_weapon_stasis")
-	
 	var character = get_parent().get_parent()
 	character.start_listening_to_inputs()
-	character.play_animation("idle")
+	
+	if character.is_on_floor():
+		character.play_animation("idle")
+	else:
+		character.play_animation("fall")
 
 # Keep the player frozen during the attack
 func _physics_process(delta: float) -> void:
